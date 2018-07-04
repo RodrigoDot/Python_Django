@@ -6,7 +6,7 @@ class CourseManager(models.Manager):
         return self.get_queryset().filter(
             models.Q(name__icontains=query) |
             models.Q(description__icontains=query) |
-            models.Q(slug__icontains=query) 
+            models.Q(slug__icontains=query)
         )
 
 
@@ -42,3 +42,11 @@ class Courses(models.Model):
         auto_now=True
     )
     objects = CourseManager()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Curso'
+        verbose_name_plural = 'Cursos'
+        ordering = ['name']
