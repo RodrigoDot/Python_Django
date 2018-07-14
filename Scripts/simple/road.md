@@ -1,7 +1,7 @@
 rodrigo
-python2018
+python123
 
->>> secao 2 - 13
+>>> secao 3 - 21
 
 ## Ativar o ambiente
 

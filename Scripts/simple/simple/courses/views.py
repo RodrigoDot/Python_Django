@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse  # Add isso
 
+from .models import Courses
 
-def home(request):
-    return render(request, 'home.html')
-
-
-def contact(request):
-    return render(request, 'contact.html')
+def index(request):
+    courses = Courses.objects.all()
+    template_name = 'courses/index.html'
+    context = {
+        'courses': courses
+    }
+    return render(request, template_name, context)

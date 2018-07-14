@@ -14,13 +14,12 @@
 #     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 # """
 from django.urls import path
-from simple.courses.views import home, contact
+from simple.courses.views import index
 
 # The app_name is necessary if you wanna to declare a namespace to your routes
 app_name = 'courses'
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('home/', home, name='home'),
-    path('contact/', contact, name='contact'),
+    path('', index, name='index'),
+    path('index/', index, name='index'),
 ]
