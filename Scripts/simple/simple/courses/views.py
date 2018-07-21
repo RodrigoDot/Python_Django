@@ -18,6 +18,6 @@ def details(request, id):
     course = get_object_or_404(Courses, id=id)
     template_name = 'courses/details.html'
     context = {
-        'course': course
+        'course': course,
     }
     return render(request, template_name, context)

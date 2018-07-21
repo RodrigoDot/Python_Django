@@ -2,6 +2,54 @@
 
 {% block content %}
 
-  <h1>Contato</h1>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Fale Conosco</h1>
+      </div>
+    </div>
+    <hr>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+
+          {% if is_valid %}
+          <p>Sua mensagem foi enviada.</p>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <a class="btn btn-primary" href="{% url 'core:contact' %}">
+                Enviar nova mensagem
+              </a>
+            </div>
+          </div>
+          {% else %}
+          <form action="{% url 'core:contact' %}" method="post">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+
+            {% for field in form %}
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">{{ field.label }}</label>
+              <div class="col-sm-10">
+                  {{ field }}
+                  {{ field.errors }}
+              </div>
+            </div>
+            {% endfor %}
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+
+          </form>
+          {% endif %}
+
+        </div>
+      </div>
+    </div> <!-- /container -->
 
 {% endblock %}
