@@ -22,6 +22,10 @@ class Courses(models.Model):
         'Descrição',
         blank=True
     )
+    about = models.TextField(
+        'Sobre',
+        blank=True
+    )
     image = models.ImageField(
         upload_to='courses/images',
         verbose_name='Imagen',
@@ -45,6 +49,10 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('courses:details', (), {'id': self.id})
 
     class Meta:
         verbose_name = 'Curso'

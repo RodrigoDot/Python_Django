@@ -1,7 +1,7 @@
 rodrigo
 python123
 
->>> secao 3 - 21
+>>> secao 3 - 24
 
 ## Ativar o ambiente
 
@@ -29,6 +29,7 @@ Na pasta raiz do projeto > python manage.py migrate
 
 Apos realizar alguma mudanca no banco, basta rodar o comando a seguir para atualizar as models
 Na pasta raiz do projeto > python manage.py makemigrations
+E depois rodar o comando > python manage.py migrate para atualizar o banco
 
 
 ## Ver o codigo SQL gerado

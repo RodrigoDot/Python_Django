@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h1>Lista de Cursos</h1>
   {% for course in courses %}
-    <div class="alert alert-success" role="alert">
+  <a href="{{ course.get_absolute_url }}">
+    <div class="alert alert-info" role="alert">
       <div class="row">
-        <img class="col-md-3" src="http://via.placeholder.com/350x150?text={{ course }}" alt="{{ course }}">
+        {% if course.image %}
+        <img class="col-md-3" src="{{ course.image.url }}" alt="{{ course }}">
+        {% else  %}
+        <img class="col-md-3" src="{% static 'img/curso.png' %}" alt="{{ course }}">
+        {% endif %}
         <div class="col-md-9">
           <h4 class="alert-heading">{{ course }}</h4>
           <p>{{ course.description|linebreaks }}</p>
@@ -14,5 +20,15 @@
         </div>
       </div>
     </div>
+  </a>
+  {% empty  %}
+  <div class="alert alert-success" role="alert">
+    <div class="row">
+      <div class="col-md-9">
+        <h4 class="alert-heading">Oopss!</h4>
+        <p>Nao ha cursos disponiveis</p>
+      </div>
+    </div>
+  </div>
   {% endfor %}
 {% endblock %}

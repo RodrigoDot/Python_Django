@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">{{ course }}</h1>
+          <p style="margin-bottom:50px">{{ course.description }}</p>
+
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Ir para o curso »</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-12">
+            {% if course.about %}
+            <p class="text-justify">
+              {{ course.about|linebreaks }}
+            </p>
+            {% else %}
+            <p class="text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sem, egestas in ante quis, cursus gravida magna. Maecenas pharetra urna et luctus laoreet. Duis ut fermentum libero, vehicula luctus augue. Integer malesuada turpis eu risus gravida, ut iaculis risus ultrices. Praesent at elit felis. Morbi bibendum dignissim sem, vel semper massa pellentesque non. Duis mollis justo non cursus auctor. Fusce vitae tortor sodales, finibus dolor vitae, sodales nunc. Fusce ac commodo libero. Ut ut pulvinar odio.
+            </p>
+            <p class="text-justify">
+              Cras sed quam quis eros hendrerit rutrum. Vivamus id pretium sapien. Donec fermentum scelerisque lorem, vitae rhoncus nulla rutrum et. Donec neque turpis, maximus et tincidunt eget, lacinia non nulla. Aliquam mauris magna, dignissim a sagittis molestie, dictum id felis. Vivamus in diam vestibulum, faucibus libero quis, tristique lectus. Morbi mollis sem neque, sed vulputate nunc elementum in. In tempor malesuada laoreet. In in imperdiet augue. Donec lobortis posuere arcu, quis sollicitudin nunc cursus in. Praesent tristique eleifend commodo. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </p>
+            <p class="text-justify">
+              Fusce vestibulum ex ligula, at auctor dui sagittis vel. Ut justo lacus, commodo sit amet dui in, rhoncus tempor lacus. Vestibulum molestie massa vitae elit finibus, a ultrices leo consequat. Ut ullamcorper sollicitudin lorem, eget tincidunt nunc lacinia sit amet. Nullam sit amet purus hendrerit, viverra lectus eget, volutpat erat. Maecenas nec turpis finibus, posuere magna eget, dictum mauris. Morbi at magna lacus. Aliquam dignissim velit et nibh elementum, quis lobortis ex pulvinar. Aenean consequat quam a euismod pharetra. Praesent viverra lectus placerat fermentum suscipit. Aliquam efficitur ante et lacus posuere, ut sollicitudin metus porttitor. Maecenas sed varius mi. Cras ullamcorper gravida lorem, at commodo enim molestie non.
+            </p>
+            <p class="text-justify">
+              Curabitur eget felis malesuada tellus accumsan faucibus. Nullam vitae nisi et dui dignissim rutrum. Nullam a semper metus, vitae rutrum tortor. Quisque eleifend malesuada blandit. Integer iaculis risus ac mauris interdum dictum. Nam vel mattis urna. Maecenas volutpat massa quis magna finibus, eget porta tellus mollis. Fusce eget mattis mauris. Vivamus eget quam id nibh rutrum vehicula eget eu neque. Nullam tincidunt urna ut urna scelerisque consectetur. Fusce et tellus ligula. Sed et lorem imperdiet, efficitur elit non, pulvinar nulla. Sed elementum sit amet orci in pretium. In sit amet accumsan sem.
+            </p>
+            <p class="text-justify">
+              Aliquam non sapien sed quam rutrum dictum non a ante. Curabitur ac tellus arcu. Suspendisse feugiat non velit interdum hendrerit. Suspendisse fermentum quis ante quis porta. Quisque fermentum, nisi id placerat posuere, sem dolor sodales ipsum, ac scelerisque est est quis diam. Mauris in mi arcu. Fusce semper urna tincidunt, rhoncus dui in, mollis nisi. Nulla facilisi. Integer quis pellentesque urna. Vivamus condimentum sollicitudin eros, a pretium lectus dapibus bibendum.
+            </p>
+            {% endif %}
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+{% endblock %}
